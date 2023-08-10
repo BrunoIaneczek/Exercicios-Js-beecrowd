@@ -1,17 +1,25 @@
 'use strict'
 
 export function problem (lines){
-    const [dias] = lines[0].split(' ')
+    const [quantidadeEmDias] = lines[0].split(' ')
     const intervalos = [365,30,1]
-    const qtdIntervalo = (dias,intervalo)=>Math.floor(dias/intervalo)
+    
+    const qtdInter = (quantidadeEmDias,intervalo)=> Math.floor(quantidadeEmDias/intervalo)
 
-    function qtdPintervalo(dia,intervalos){
-        const lista = intervalos.map(intervalo=>{
-            const qtd = qtdIntervalo(dias,intervalo)
-            dia = dia -(qtd*intervalo)
+
+
+    const determinaIdade = (dias,intervalos)=>{
+        const idade = intervalos.map(intervalo=>{
+            const qtd = qtdInter(dias,intervalo)
+            dias%=intervalo
             return qtd
-        })
-        
-    }   return lista
 
+        })
+
+        return idade
+      
+    }
+   
+    console.log(determinaIdade(quantidadeEmDias,intervalos))
 }
+
