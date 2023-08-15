@@ -3,20 +3,12 @@ export function problem (lines){
     const somaAeB =a+b
     const somaCeD = c+d
 
-    if(b>c && d>a){
-        if(somaCeD > somaAeB){
-            if(c>0 && d> 0){
-                if(a%2==0){
-                    console.log('valores aceitos')
-                }
-            }else{
-                console.log('Valores nao aceitos') 
-            }
+    const verifica  = (a,b,c,d)=>{
+        if(b>c && d>a && somaCeD>somaAeB && c>0 && d>0 && a%2==0){
+            console.log('Valores aceitos')
         }else{
-            console.log('Valores nao aceitos') 
+            console.log('Valores nao aceitos')
         }
-    }else{
-        console.log('Valores nao aceitos')
     }
-
+    verifica(a,b,c,d)
 }
