@@ -13,6 +13,10 @@ export function problem (lines){
                 return 'Q3'
             }else if(valorDeX > 0 && valorDeY < 0){
                 return 'Q4'
+            }else if(valorDeX === 0 && valorDeY !== 0){
+                return 'Eixo Y'
+            }else if(valorDeX !== 0 && valorDeY===0){
+                return 'Eixo X'
             }
         }
     }
